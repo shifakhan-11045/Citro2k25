@@ -25,6 +25,7 @@
             height: 100vh;
             width: 100vw;
             scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* Fullscreen sections with background images */
@@ -37,12 +38,16 @@
             background-repeat: no-repeat;
         }
 
-        /* Set background images for each page */
-        .page:nth-child(1) { background-image: url('Home.png'); }
-        .page:nth-child(2) { background-image: url('About.png'); }
-        .page:nth-child(3) { background-image: url('Reviews.png'); }
-        .page:nth-child(4) { background-image: url('images/image4.jpg'); }
+        /* Set correct background image paths */
+        .page:nth-child(1) { background-image: url('home.png'); }
+        .page:nth-child(2) { background-image: url('about.png'); }
+        .page:nth-child(3) { background-image: url('reviews.png'); }
 
+        @media (max-width: 768px) {
+            .page {
+                background-size: contain; /* Ensures full image visibility on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -51,9 +56,9 @@
         <section class="page"></section>
         <section class="page"></section>
         <section class="page"></section>
-        <section class="page"></section>
     </div>
 
 </body>
 </html>
+
 
